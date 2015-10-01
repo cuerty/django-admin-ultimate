@@ -3,10 +3,10 @@
 
 from django.contrib import admin
 
-from .models import Coucine, Recipe, Step
+from .models import Cousine, Recipe, Step
 
 
-admin.site.register(Coucine)
+admin.site.register(Cousine)
 
 admin.site.register(Recipe)
 
