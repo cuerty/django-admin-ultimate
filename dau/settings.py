@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'easy_thumbnails',
+    'django_extensions',
+    'floppyforms',
     'recipe',
 )
 
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'dau.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,3 +104,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Easy thumbnails
+# 
+
+THUMBNAIL_ALIASES = {
+    'recipe.Recipe.splash_image': {
+        '600x400': {'size': (600, 400), 'autocrop': True, 'crop': 'smart', 'upscale': True},
+        '1020x450': {'size': (1020, 450), 'autocrop': True, 'crop': 'smart', 'upscale': True},
+        '1200x630': {'size': (1200, 630), 'autocrop': True, 'crop': 'smart', 'upscale': True},
+    },
+    'recipe.Recipe.ingredients_image': {
+        '475x435': {'size': (475, 435), 'autocrop': True, 'crop': 'smart', 'upscale': True},
+    },
+}

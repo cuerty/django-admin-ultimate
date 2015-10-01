@@ -1,0 +1,11 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+
+<h3>600x400</h3>
+<img src="{{ recipe.splash_image.600x400.url }}" alt="{{ recipe.name }}" />
+
+<h3>1020x450</h3>
+<img src="{{ recipe.splash_image.1020x450.url }}" alt="{{ recipe.name }}" />
+
+{% endblock %}
