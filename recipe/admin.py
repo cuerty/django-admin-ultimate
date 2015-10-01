@@ -52,6 +52,7 @@ class RecipeAdmin(admin.ModelAdmin):
     actions = [make_french]
     inlines = (StepInline,)
     list_filter = (InitialsListFilter,)
+    list_display = ('name', 'get_thumbnail',)
 
     def get_urls(self):
         urls = super(RecipeAdmin, self).get_urls()

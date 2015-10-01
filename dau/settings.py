@@ -116,6 +116,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 THUMBNAIL_ALIASES = {
     'recipe.Recipe.splash_image': {
+        '50x50': {'size': (50, 50), 'autocrop': True, 'crop': 'smart', 'upscale': True},
         '600x400': {'size': (600, 400), 'autocrop': True, 'crop': 'smart', 'upscale': True},
         '1020x450': {'size': (1020, 450), 'autocrop': True, 'crop': 'smart', 'upscale': True},
         '1200x630': {'size': (1200, 630), 'autocrop': True, 'crop': 'smart', 'upscale': True},
